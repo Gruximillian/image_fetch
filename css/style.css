@@ -1,0 +1,55 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: teal;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* a backdrop in case we want to add a modal with the image */
+.modal-active::after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.image-container {
+    width: 600px;
+    height: 480px;
+    background-color: yellow;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.loading::after {
+    content: '';
+    display: block;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    border: 10px solid transparent;
+    border-left-color: #ccc;
+    border-right-color: #ccc;
+    border-radius: 50%;
+    z-index: 2000;
+    animation: rotate 1s 0s infinite linear;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg) }
+    50% { transform: rotate(180deg) }
+    100% { transform: rotate(360deg) }
+}
