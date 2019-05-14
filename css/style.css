@@ -23,7 +23,7 @@ body {
 
 .image-container {
     width: 640px;
-    height: 480px;
+    height: 479px;
     background-color: yellow;
     position: relative;
 }
